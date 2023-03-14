@@ -1,0 +1,55 @@
+{
+  "name": "h3-proxy",
+  "version": "1.0.0",
+  "description": "A proxy event handler for h3, using proxyRequest.",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "types"
+  ],
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c",
+    "release": "npm run build && changelogen --release && npm publish --access=public && git push --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yisibell/h3-proxy.git"
+  },
+  "keywords": [
+    "h3",
+    "http-proxy",
+    "event-handler",
+    "http"
+  ],
+  "author": {
+    "name": "elenh",
+    "email": "yisiwings@163.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yisibell/h3-proxy/issues"
+  },
+  "homepage": "https://github.com/yisibell/h3-proxy#readme",
+  "dependencies": {
+    "h3": "^1.6.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-typescript": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "changelogen": "^0.4.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.1",
+    "rollup": "^3.7.5",
+    "rollup-plugin-dts": "^5.1.1",
+    "tslib": "^2.4.1",
+    "typescript": "~4.9.4"
+  }
+}
