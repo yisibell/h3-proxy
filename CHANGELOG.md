@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v0.1.2
+
+
+### 🚀 Enhancements
+
+  - Support pathRewrite (f43a171)
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v0.1.1
 
 

@@ -1,6 +1,6 @@
 {
   "name": "h3-proxy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A proxy event handler for h3, using proxyRequest.",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
