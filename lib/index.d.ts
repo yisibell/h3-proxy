@@ -8,9 +8,19 @@ type CustomPathFilter = (
 
 type PathFilterParams = string | string[] | CustomPathFilter
 
+type CustomPathRewriter = (
+  pathname: string,
+  req: IncomingMessage
+) => string
+
+type RewriteRecord = Record<string, string>
+
+type PathRewriterParams = RewriteRecord | CustomPathRewriter
+
 interface CreateProxyEventHandlerOptions {
   target: string
   pathFilter?: PathFilterParams
+  pathRewrite?: PathRewriterParams
 }
 
 type CreateProxyEventHandler = (

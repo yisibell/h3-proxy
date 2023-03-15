@@ -41,6 +41,7 @@
   },
   "homepage": "https://github.com/yisibell/h3-proxy#readme",
   "dependencies": {
+    "consola": "^2.15.3",
     "h3": "^1.6.0",
     "is-glob": "^4.0.3",
     "micromatch": "^4.0.5"
@@ -51,6 +52,7 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^10.0.1",
     "@types/is-glob": "^4.0.2",
+    "@types/lodash": "^4.14.191",
     "@types/micromatch": "^4.0.2",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
@@ -59,6 +61,7 @@
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "lodash": "^4.17.21",
     "prettier": "^2.8.1",
     "rollup": "^3.7.5",
     "rollup-plugin-dts": "^5.1.1",
