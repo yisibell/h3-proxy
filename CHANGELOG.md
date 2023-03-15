@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v0.1.3
+
+
+### 🚀 Enhancements
+
+  - Add test and local server (5b51587)
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v0.1.2
 
 
