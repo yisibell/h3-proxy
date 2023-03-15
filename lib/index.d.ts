@@ -1,4 +1,4 @@
-import { EventHandler } from 'h3';
+import { EventHandler, ProxyOptions } from 'h3';
 import { IncomingMessage } from 'http';
 
 type CustomPathFilter = (
@@ -21,6 +21,7 @@ interface CreateProxyEventHandlerOptions {
   target: string
   pathFilter?: PathFilterParams
   pathRewrite?: PathRewriterParams
+  proxyRequestOptions?: ProxyOptions
 }
 
 type CreateProxyEventHandler = (
