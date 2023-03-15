@@ -1,6 +1,6 @@
 {
   "name": "h3-proxy",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A proxy event handler for h3, using proxyRequest.",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
@@ -9,6 +9,13 @@
     "lib",
     "types"
   ],
+  "exports": {
+    ".": {
+      "import": "./lib/index.esm.js",
+      "require": "./lib/index.cjs.js",
+      "types": "./lib/index.d.ts"
+    }
+  },
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
@@ -34,11 +41,17 @@
   },
   "homepage": "https://github.com/yisibell/h3-proxy#readme",
   "dependencies": {
-    "h3": "^1.6.0"
+    "h3": "^1.6.0",
+    "is-glob": "^4.0.3",
+    "micromatch": "^4.0.5"
   },
   "devDependencies": {
+    "@rollup/plugin-alias": "^4.0.3",
     "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^10.0.1",
+    "@types/is-glob": "^4.0.2",
+    "@types/micromatch": "^4.0.2",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
     "changelogen": "^0.4.1",

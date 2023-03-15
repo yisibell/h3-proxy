@@ -1,6 +1,7 @@
 import typescript from '@rollup/plugin-typescript'
 import commonjs from '@rollup/plugin-commonjs'
 import dts from 'rollup-plugin-dts'
+import resolve from '@rollup/plugin-node-resolve'
 import pkg from './package.json' assert { type: 'json' }
 
 export default [
@@ -8,6 +9,7 @@ export default [
     input: 'src/index.ts',
     external: Object.keys(pkg.dependencies),
     plugins: [
+      resolve(),
       commonjs(),
       typescript(), // so Rollup can convert TypeScript to JavaScript
     ],
