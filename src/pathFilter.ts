@@ -76,7 +76,7 @@ const isTargetFilterPath: IsTargetFilterPath = (
     }
   }
 
-  return false
+  return true
 }
 
 export { isTargetFilterPath }

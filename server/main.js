@@ -4,8 +4,10 @@ import { createProxyEventHandler } from '../lib/index.esm.js'
 
 const app = createApp()
 
+const port = process.env.PORT || 3000
+
 const proxyEventHandler = createProxyEventHandler({
-  target: 'http://127.0.0.1:3000',
+  target: `http://127.0.0.1:${port}`,
   pathRewrite: {
     '/api': '',
   },
@@ -19,4 +21,4 @@ app.use(
 
 app.use(eventHandler(proxyEventHandler))
 
-createServer(toNodeListener(app)).listen(process.env.PORT || 3000)
+createServer(toNodeListener(app)).listen(port)
