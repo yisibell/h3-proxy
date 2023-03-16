@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v1.2.0
+
+
+### 🚀 Enhancements
+
+  - Support configure h3 options with configureProxyRequest (84a4515)
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.1.4
 
 

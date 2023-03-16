@@ -1,4 +1,4 @@
-import { EventHandler, ProxyOptions } from 'h3';
+import { EventHandler, H3Event, ProxyOptions } from 'h3';
 import { IncomingMessage } from 'http';
 
 type CustomPathFilter = (
@@ -17,11 +17,13 @@ type RewriteRecord = Record<string, string>
 
 type PathRewriterParams = RewriteRecord | CustomPathRewriter
 
+type ConfigureProxyRequest = (event: H3Event) => ProxyOptions
+
 interface CreateProxyEventHandlerOptions {
   target: string
   pathFilter?: PathFilterParams
   pathRewrite?: PathRewriterParams
-  proxyRequestOptions?: ProxyOptions
+  configureProxyRequest?: ConfigureProxyRequest
 }
 
 type CreateProxyEventHandler = (
