@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v1.1.2
+
+
+### 📦 Build
+
+  - PeerDependencies to external (4437d4e)
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.1.1
 
 
