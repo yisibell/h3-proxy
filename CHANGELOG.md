@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v1.1.0
+
+
+### 🚀 Enhancements
+
+  - Update pathFilter default value; update docs; put h3 to peer deps (ec56c40)
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v0.1.3
 
 
