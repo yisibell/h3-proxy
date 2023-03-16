@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v1.1.1
+
+
+### 🩹 Fixes
+
+  - **h3:** External deps (fd62840)
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.1.0
 
 
