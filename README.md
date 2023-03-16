@@ -68,6 +68,7 @@ Create a `h3` event handler that can handle **proxy requests**.
 ### Options
 
 | Key | Type | Required | Description |
+| :---: | :---: | :---: | :---: |
 | `target` | `string` | `true` | Proxy target address, including **protocol**, **host** and **port**. |
 | `pathFilter` | `string | string[] | glob | glob[] | Function` | `false` | Narrow down which requests should be proxied. |
 | `pathRewrite` | `object/Function` | `false` | Rewrite target's url path. Object-keys will be used as RegExp to match paths. |
