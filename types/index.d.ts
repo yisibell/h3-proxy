@@ -1,5 +1,5 @@
-import type { CreateProxyEventHandler } from '../src/interfaces/core'
+import type { CreateProxyEventHandler, CreateProxyEventHandlerOptions } from '../src/interfaces/core'
 
 declare const createProxyEventHandler: CreateProxyEventHandler
 
-export { createProxyEventHandler }
+export { createProxyEventHandler, CreateProxyEventHandlerOptions }
