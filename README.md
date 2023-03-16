@@ -14,7 +14,7 @@ A **proxy event handler** for `h3`, using `proxyRequest`.
 
 # Features
 
-- Powerd by built-in `proxyRequest` of `h3`.
+- Powered by built-in `proxyRequest` of `h3`.
 - Support **Typescript**.
 
 # Installation
