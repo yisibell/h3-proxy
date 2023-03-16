@@ -5,17 +5,20 @@ import { createPathRewriter } from './pathRewriter'
 import { proxyRequest } from 'h3'
 
 const createProxyEventHandler: CreateProxyEventHandler = (options) => {
-  const { target, pathFilter, pathRewrite, proxyRequestOptions } = options
+  const { target, pathFilter, pathRewrite, configureProxyRequest } = options
 
   return (event) => {
     const { req } = event.node
 
     const path = url.parse(req.url || '').pathname || ''
 
+    const proxyRequestOptions = typeof configureProxyRequest === 'function' ? configureProxyRequest(event) : undefined
+
     if (isTargetFilterPath(path, { pathFilter, req })) {
       const pathRewriter = createPathRewriter(pathRewrite)
 
       const rewritedPath = pathRewriter ? pathRewriter(path, req) : path
+      
 
       const targetUrl = `${target}${rewritedPath}`
 
