@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v1.3.0
+
+
+### 🚀 Enhancements
+
+  - **types:** Export CreateProxyEventHandlerOptions type (ce2d593)
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.2.2
 
 

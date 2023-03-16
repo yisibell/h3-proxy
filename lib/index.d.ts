@@ -1,4 +1,4 @@
-import { EventHandler, H3Event, ProxyOptions } from 'h3';
+import { H3Event, ProxyOptions, EventHandler } from 'h3';
 import { IncomingMessage } from 'http';
 
 type CustomPathFilter = (
@@ -32,4 +32,4 @@ type CreateProxyEventHandler = (
 
 declare const createProxyEventHandler: CreateProxyEventHandler
 
-export { createProxyEventHandler };
+export { CreateProxyEventHandlerOptions, createProxyEventHandler };
