@@ -4,7 +4,7 @@ import dts from 'rollup-plugin-dts'
 import resolve from '@rollup/plugin-node-resolve'
 import pkg from './package.json' assert { type: 'json' }
 
-const external = [...new Set(['h3', ...Object.keys(pkg.dependencies)])]
+const external = [...new Set([...Object.keys(pkg.peerDependencies), ...Object.keys(pkg.dependencies)])]
 
 export default [
   {
@@ -13,7 +13,7 @@ export default [
     plugins: [
       resolve(),
       commonjs(),
-      typescript(), // so Rollup can convert TypeScript to JavaScript
+      typescript(),
     ],
     output: [
       {
