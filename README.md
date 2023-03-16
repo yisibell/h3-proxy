@@ -72,7 +72,87 @@ Create a `h3` event handler that can handle **proxy requests**.
 | `target` | `string` | `true` | Proxy target address, including **protocol**, **host** and **port**. |
 | `pathFilter` | `string, string[], glob, glob[], Function` | `false` | Narrow down which requests should be proxied. |
 | `pathRewrite` | `object/Function` | `false` | Rewrite target's url path. Object-keys will be used as RegExp to match paths. |
-| `configureProxyRequest` | `Function` | `false` | Configure options of `proxyRequest`. More details see <a href="https://github.com/unjs/h3"></a> |
+| `configureProxyRequest` | `Function` | `false` | Configure options of `proxyRequest`. More details see <a href="https://github.com/unjs/h3">h3</a> |
+
+### pathFilter
+
+- **path matching**
+
+  - `createProxyEventHandler({...})` - matches any path, all requests will be proxied when `pathFilter` is not configured.
+  - `createProxyEventHandler({ pathFilter: '/api', ...})` - matches paths starting with `/api`
+
+- **multiple path matching**
+
+  - `createProxyEventHandler({ pathFilter: ['/api', '/ajax', '/someotherpath'], ...})`
+
+- **wildcard path matching**
+
+  For fine-grained control you can use wildcard matching. Glob pattern matching is done by _micromatch_. Visit [micromatch](https://www.npmjs.com/package/micromatch) or [glob](https://www.npmjs.com/package/glob) for more globbing examples.
+
+  - `createProxyEventHandler({ pathFilter: '**', ...})` matches any path, all requests will be proxied.
+  - `createProxyEventHandler({ pathFilter: '**/*.html', ...})` matches any path which ends with `.html`
+  - `createProxyEventHandler({ pathFilter: '/*.html', ...})` matches paths directly under path-absolute
+  - `createProxyEventHandler({ pathFilter: '/api/**/*.html', ...})` matches requests ending with `.html` in the path of `/api`
+  - `createProxyEventHandler({ pathFilter: ['/api/**', '/ajax/**'], ...})` combine multiple patterns
+  - `createProxyEventHandler({ pathFilter: ['/api/**', '!**/bad.json'], ...})` exclusion
+
+> :warning: **Note**: In multiple path matching, you cannot use string paths and wildcard paths together.
+
+- **custom matching**
+
+  For full control you can provide a custom function to determine which requests should be proxied or not.
+
+  ```javascript
+  /**
+   * @return {Boolean}
+   */
+  const pathFilter = function (path, req) {
+    return path.match('^/api') && req.method === 'GET';
+  };
+
+  const apiProxy = createProxyEventHandler({
+    target: 'http://www.example.org',
+    pathFilter: pathFilter,
+  });
+  ```
+
+### pathRewrite
+
+Rewrite target's url path. Object-keys will be used as _RegExp_ to match paths.
+
+```javascript
+// rewrite path
+pathRewrite: {'^/old/api' : '/new/api'}
+
+// remove path
+pathRewrite: {'^/remove/api' : ''}
+
+// add base path
+pathRewrite: {'^/' : '/basepath/'}
+
+// custom rewriting
+pathRewrite: function (path, req) { return path.replace('/api', '/base/api') }
+
+// custom rewriting, returning Promise
+pathRewrite: async function (path, req) {
+  const should_add_something = await httpRequestToDecideSomething(path);
+  if (should_add_something) path += "something";
+  return path;
+}
+```
+
+### configureProxyRequest
+
+```ts
+createProxyEventHandler({
+  // ...
+  // event is H3Event
+  configureProxyRequest(event) {
+    // return your custom options of proxyRequest
+    return {}
+  }
+})
+```
 
 
 # CHANGE LOG
