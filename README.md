@@ -96,7 +96,7 @@ Create a `h3` event handler that can handle **proxy requests**.
   - `createProxyEventHandler({ pathFilter: ['/api/**', '/ajax/**'], ...})` combine multiple patterns
   - `createProxyEventHandler({ pathFilter: ['/api/**', '!**/bad.json'], ...})` exclusion
 
-> :warning: **Note**: In multiple path matching, you cannot use string paths and wildcard paths together.
+> :warning: TIPS, In multiple path matching, you cannot use string paths and wildcard paths together.
 
 - **custom matching**
 
