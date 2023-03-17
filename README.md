@@ -44,7 +44,7 @@ const port = process.env.PORT || 3000
 const proxyEventHandler = createProxyEventHandler({
   target: `http://127.0.0.1:${port}`,
   pathRewrite: {
-    '/api': '',
+    '^/api': '',
   },
   pathFilter: ['/api/**'],
 })
@@ -72,7 +72,7 @@ Create a `h3` event handler that can handle **proxy requests**.
 | `target` | `string` | `true` | Proxy target address, including **protocol**, **host** and **port**. |
 | `pathFilter` | `string, string[], glob, glob[], Function` | `false` | Narrow down which requests should be proxied. |
 | `pathRewrite` | `object/Function` | `false` | Rewrite target's url path. Object-keys will be used as RegExp to match paths. |
-| `configureProxyRequest` | `Function` | `false` | Configure options of `proxyRequest`. More details see <a href="https://github.com/unjs/h3">h3</a> |
+| `configureProxyRequest` | `Function` | `false` | Configure options of `proxyRequest`. More details see <a href="https://github.com/unjs/h3">built-in util proxyRequest of h3</a> |
 
 ### pathFilter
 
@@ -146,7 +146,7 @@ pathRewrite: async function (path, req) {
 ```ts
 createProxyEventHandler({
   // ...
-  // event is H3Event
+  // the param `event` is H3Event
   configureProxyRequest(event) {
     // return your custom options of proxyRequest
     return {}

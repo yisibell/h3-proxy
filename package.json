@@ -7,8 +7,7 @@
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
   "files": [
-    "lib",
-    "types"
+    "lib"
   ],
   "exports": {
     ".": {
@@ -34,7 +33,10 @@
     "h3",
     "http-proxy",
     "event-handler",
-    "http"
+    "http",
+    "proxy",
+    "proxyRequest",
+    "middleware"
   ],
   "author": {
     "name": "elenh",
