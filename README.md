@@ -15,6 +15,7 @@ A **proxy event handler** for `h3`, using `proxyRequest`.
 # Features
 
 - Powered by built-in `proxyRequest` of `h3`.
+- Support logs via **consola**.
 - Support **Typescript**.
 
 # Installation
@@ -107,7 +108,7 @@ Create a `h3` event handler that can handle **proxy requests**.
 
   For full control you can provide a custom function to determine which requests should be proxied or not.
 
-  ```javascript
+  ```js
   /**
    * @return {Boolean}
    */
@@ -123,9 +124,9 @@ Create a `h3` event handler that can handle **proxy requests**.
 
 ### pathRewrite
 
-Rewrite target's url path. Object-keys will be used as _RegExp_ to match paths.
+Rewrite target's url path. **Object-keys** will be used as **RegExp** to match paths.
 
-```javascript
+```js
 // rewrite path
 pathRewrite: {'^/old/api' : '/new/api'}
 

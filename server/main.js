@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000
 const proxyEventHandler = createProxyEventHandler({
   target: `http://127.0.0.1:${port}`,
   pathRewrite: {
-    '/api': '',
+    '^/api': '',
   },
   pathFilter: ['/api/**'],
   // enableLogger: false

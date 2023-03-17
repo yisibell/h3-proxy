@@ -12,7 +12,7 @@ type PathFilterParams = string | string[] | CustomPathFilter
 type CustomPathRewriter = (
   pathname: string,
   req: IncomingMessage
-) => string
+) => string | Promise<string>
 
 type RewriteRecord = Record<string, string>
 

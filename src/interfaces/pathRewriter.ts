@@ -4,7 +4,7 @@ import type { Logger } from './logger'
 export type CustomPathRewriter = (
   pathname: string,
   req: IncomingMessage
-) => string
+) => string | Promise<string>
 
 export type RewriteRecord = Record<string, string>
 

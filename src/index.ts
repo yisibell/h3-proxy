@@ -18,7 +18,7 @@ const createProxyEventHandler: CreateProxyEventHandler = (options) => {
     loggerOptions
   })
 
-  return (event) => {
+  return async (event) => {
     const { req } = event.node
 
     const path = url.parse(req.url || '').pathname || ''
@@ -27,8 +27,12 @@ const createProxyEventHandler: CreateProxyEventHandler = (options) => {
 
     if (isTargetFilterPath(path, { pathFilter, req })) {
       const pathRewriter = createPathRewriter(pathRewrite, logger)
+      
+      let rewritedPath = path
 
-      const rewritedPath = pathRewriter ? pathRewriter(path, req) : path
+      if (pathRewriter) {
+        rewritedPath = await pathRewriter(path, req)
+      }
       
       const targetUrl = `${target}${rewritedPath}`
 
