@@ -1,6 +1,21 @@
 # Changelog
 
 
+## v1.4.0
+
+
+### 🚀 Enhancements
+
+  - **types:** Export useful types (3e429b8)
+
+### 🏡 Chore
+
+  - **docs:** Fix npm version (d0785ce)
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.3.0
 
 

@@ -32,4 +32,4 @@ type CreateProxyEventHandler = (
 
 declare const createProxyEventHandler: CreateProxyEventHandler
 
-export { CreateProxyEventHandlerOptions, createProxyEventHandler };
+export { ConfigureProxyRequest, CreateProxyEventHandlerOptions, PathFilterParams, PathRewriterParams, createProxyEventHandler };
