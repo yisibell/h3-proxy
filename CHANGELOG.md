@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v1.6.0
+
+
+### 🚀 Enhancements
+
+  - Support asynchronous custom pathRewrite (95cff57)
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.5.0
 
 
