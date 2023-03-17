@@ -1,6 +1,7 @@
 import isGlob from 'is-glob'
 import micromatch from 'micromatch'
 import type { IsTargetFilterPath } from './interfaces/pathFilter'
+import { ERRORS } from './errors'
 
 const isStringPath = (pathFilter?: string | string[]): pathFilter is string => {
   return typeof pathFilter === 'string' && !isGlob(pathFilter)
@@ -74,6 +75,8 @@ const isTargetFilterPath: IsTargetFilterPath = (
     if ((pathFilter as string[]).every(isGlobPath)) {
       return matchMultiGlobPath(pathname, pathFilter)
     }
+
+    throw new Error(ERRORS.ERR_CONTEXT_MATCHER_INVALID_ARRAY);
   }
 
   return true

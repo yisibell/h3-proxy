@@ -12,6 +12,7 @@ const proxyEventHandler = createProxyEventHandler({
     '/api': '',
   },
   pathFilter: ['/api/**'],
+  // enableLogger: false
 })
 
 app.use(

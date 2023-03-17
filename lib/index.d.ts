@@ -1,5 +1,6 @@
 import { H3Event, ProxyOptions, EventHandler } from 'h3';
 import { IncomingMessage } from 'http';
+import { ConsolaOptions } from 'consola';
 
 type CustomPathFilter = (
   pathname: string,
@@ -23,7 +24,12 @@ interface CreateProxyEventHandlerOptions {
   target: string
   pathFilter?: PathFilterParams
   pathRewrite?: PathRewriterParams
+  // Configure options of proxyRequest which is h3's built-in util
   configureProxyRequest?: ConfigureProxyRequest
+  // Weather to enable logger
+  enableLogger?: boolean
+  // Configure the options of consola
+  loggerOptions?: ConsolaOptions
 }
 
 type CreateProxyEventHandler = (

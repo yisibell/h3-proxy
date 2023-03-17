@@ -5,7 +5,8 @@ import type {
   RewriteRecord,
 } from './interfaces/pathRewriter'
 import isPlainObj from 'lodash/isPlainObject'
-import consola from 'consola'
+import { ERRORS } from './errors'
+import type { Logger } from './interfaces/logger'
 
 function isValidRewriteConfig(rewriteConfig?: PathRewriterParams) {
   if (typeof rewriteConfig === 'function') {
@@ -15,11 +16,11 @@ function isValidRewriteConfig(rewriteConfig?: PathRewriterParams) {
   } else if (rewriteConfig === undefined || rewriteConfig === null) {
     return false
   } else {
-    throw new Error('Illegal configuration')
+    throw new Error(ERRORS.ERR_PATH_REWRITER_CONFIG)
   }
 }
 
-function parsePathRewriteRules(rewriteRecord: RewriteRecord) {
+function parsePathRewriteRules(rewriteRecord: RewriteRecord, logger?: Logger) {
   const rules: RewriteRule[] = []
 
   if (isPlainObj(rewriteRecord)) {
@@ -28,7 +29,7 @@ function parsePathRewriteRules(rewriteRecord: RewriteRecord) {
         regex: new RegExp(key),
         value: value,
       })
-      consola.info('rewrite rule created: "%s" ~> "%s"', key, value)
+      logger && logger.info('rewrite rule created: "%s" ~> "%s"', key, value)
     }
   }
 
@@ -38,7 +39,7 @@ function parsePathRewriteRules(rewriteRecord: RewriteRecord) {
 /**
  * Create a path rewriter function
  */
-const createPathRewriter: CreatePathRewriter = (rewriteConfig) => {
+const createPathRewriter: CreatePathRewriter = (rewriteConfig, logger) => {
   if (!isValidRewriteConfig(rewriteConfig)) {
     return
   }
@@ -51,7 +52,7 @@ const createPathRewriter: CreatePathRewriter = (rewriteConfig) => {
     for (const rule of rulesCache) {
       if (rule.regex.test(path)) {
         result = result.replace(rule.regex, rule.value)
-        consola.info('rewriting path from "%s" to "%s"', path, result)
+        logger && logger.info('rewriting path from "%s" to "%s"', path, result)
         break
       }
     }
@@ -63,7 +64,7 @@ const createPathRewriter: CreatePathRewriter = (rewriteConfig) => {
     const customRewriteFn = rewriteConfig
     return customRewriteFn
   } else {
-    rulesCache = parsePathRewriteRules(rewriteConfig as RewriteRecord)
+    rulesCache = parsePathRewriteRules(rewriteConfig as RewriteRecord, logger)
     return rewritePath
   }
 }
