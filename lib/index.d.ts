@@ -26,7 +26,7 @@ interface CreateProxyEventHandlerOptions {
   pathRewrite?: PathRewriterParams
   // Configure options of proxyRequest which is h3's built-in util
   configureProxyRequest?: ConfigureProxyRequest
-  // Weather to enable logger
+  // Whether to enable logger
   enableLogger?: boolean
   // Configure the options of consola
   loggerOptions?: ConsolaOptions

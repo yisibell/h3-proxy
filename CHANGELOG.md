@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v1.5.0
+
+
+### 🚀 Enhancements
+
+  - Support logger; add ERRORS enum (861d8c1)
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.4.0
 
 
