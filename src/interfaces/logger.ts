@@ -1,7 +1,7 @@
 import type { ConsolaOptions, Consola } from 'consola'
 
 export interface CreateLoggerOptions {
-  // Weather to enable logger
+  // Whether to enable logger
   enableLogger?: boolean
   // Configure the options of consola
   loggerOptions?: ConsolaOptions

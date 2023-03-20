@@ -23,7 +23,7 @@
     "test:dev": "vitest dev",
     "test": "vitest run",
     "test:coverage": "yarn test -- --reporter verbose --coverage",
-    "start": "node ./server/main.js"
+    "start": "node ./playground/main.js"
   },
   "repository": {
     "type": "git",
@@ -68,6 +68,7 @@
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "h3": "^1.6.2",
     "lodash": "^4.17.21",
     "prettier": "^2.8.1",
     "rollup": "^3.7.5",
@@ -75,8 +76,7 @@
     "supertest": "^6.3.3",
     "tslib": "^2.4.1",
     "typescript": "~4.9.4",
-    "vitest": "^0.29.2",
-    "h3": "^1.6.0"
+    "vitest": "^0.29.2"
   },
   "peerDependencies": {
     "h3": "^1.6.0"

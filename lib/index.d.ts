@@ -18,7 +18,9 @@ type RewriteRecord = Record<string, string>
 
 type PathRewriterParams = RewriteRecord | CustomPathRewriter
 
-type ConfigureProxyRequest = (event: H3Event) => ProxyOptions
+type ProxyRequestOptions = ProxyOptions
+
+type ConfigureProxyRequest = (event: H3Event) => ProxyRequestOptions
 
 interface CreateProxyEventHandlerOptions {
   target: string
@@ -30,6 +32,8 @@ interface CreateProxyEventHandlerOptions {
   enableLogger?: boolean
   // Configure the options of consola
   loggerOptions?: ConsolaOptions
+  // true/false, Default: false - changes the origin of the host header to the target URL
+  changeOrigin?: boolean
 }
 
 type CreateProxyEventHandler = (

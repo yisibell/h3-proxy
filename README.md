@@ -71,13 +71,13 @@ Create a `h3` event handler that can handle **proxy requests**.
 
 | Key | Type | Required | Default value | Description |
 | :---: | :---: | :---: | :---: | :---:  |
-| `target` | `string` | `true` | `undefined` | Proxy target address, including **protocol**, **host** and **port**. |
-| `pathFilter` | `string, string[], glob, glob[], Function` | `false` | `undefined` |Narrow down which requests should be proxied. |
-| `pathRewrite` | `object/Function` | `false` | `undefined` | Rewrite target's url path. Object-keys will be used as RegExp to match paths. |
-| `configureProxyRequest` | `Function` | `false` | `undefined` | Configure options of `proxyRequest`. More details see <a href="https://github.com/unjs/h3">built-in util proxyRequest of h3</a> |
+| `target` | `string` | `true` | `undefined` | Proxy target address, including **protocol**, **host** and **port**. url string to be parsed with the `node:url` module|
+| [pathFilter](https://github.com/yisibell/h3-proxy#pathFilter) | `string, string[], glob, glob[], Function` | `false` | `undefined` |Narrow down which requests should be proxied. |
+| [pathRewrite](https://github.com/yisibell/h3-proxy#pathRewrite) | `object/Function` | `false` | `undefined` | Rewrite target's url path. Object-keys will be used as RegExp to match paths. |
+| [configureProxyRequest](https://github.com/yisibell/h3-proxy#configureProxyRequest) | `Function` | `false` | `undefined` | Configure options of `proxyRequest`. More details see <a href="https://github.com/unjs/h3">built-in util proxyRequest of h3</a> |
 | `enableLogger` | `boolean` | `false` | `true` | Whether to enable logger which is created by **consola**. |
 | `loggerOptions` | `ConsolaOptions` | `false` | `{}` | Configure the options of [consola](https://github.com/unjs/consola). |
-
+| `changeOrigin` | `boolean` | `false` | `false` | Whether to changes the origin of the host header to the target URL |
 
 
 ### pathFilter

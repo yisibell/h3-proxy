@@ -3,7 +3,9 @@ import type { PathFilterParams } from './pathFilter'
 import type { PathRewriterParams } from './pathRewriter'
 import type { ConsolaOptions } from 'consola'
 
-export type ConfigureProxyRequest = (event: H3Event) => ProxyOptions
+export type ProxyRequestOptions = ProxyOptions
+
+export type ConfigureProxyRequest = (event: H3Event) => ProxyRequestOptions
 
 export interface CreateProxyEventHandlerOptions {
   target: string
@@ -15,6 +17,8 @@ export interface CreateProxyEventHandlerOptions {
   enableLogger?: boolean
   // Configure the options of consola
   loggerOptions?: ConsolaOptions
+  // true/false, Default: false - changes the origin of the host header to the target URL
+  changeOrigin?: boolean
 }
 
 export type CreateProxyEventHandler = (

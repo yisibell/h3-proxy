@@ -1587,15 +1587,15 @@ grapheme-splitter@^1.0.4:
   resolved "https://registry.yarnpkg.com/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz#9cf3a665c6247479896834af35cf1dbb4400767e"
   integrity sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==
 
-h3@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/h3/-/h3-1.6.0.tgz#66594a1ca67dbcdee8e74b3f2b1c60a4fcc7df3e"
-  integrity sha512-MthVCNIGkFnywJcwaPe7BWB5Y5BQJmtddu0ABnn3TAjkCqa/EzPafIfwv+wajWxjepRGrVsmu4X0ld5IGtLDHQ==
+h3@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/h3/-/h3-1.6.2.tgz#40177d886acf585a275098601d05cefd628238b7"
+  integrity sha512-1v/clj/qCzWbuiG+DbpViuOVO789sEYNjlwRjekkmyLGsezIJk30gazbnjcWvF8L/ffUdRz2SwxE5HNgNx+Yjg==
   dependencies:
     cookie-es "^0.5.0"
     defu "^6.1.2"
     destr "^1.2.2"
-    iron-webcrypto "^0.5.0"
+    iron-webcrypto "^0.6.0"
     radix3 "^1.0.0"
     ufo "^1.1.1"
     uncrypto "^0.1.2"
@@ -1716,10 +1716,10 @@ inquirer@8.2.5:
     through "^2.3.6"
     wrap-ansi "^7.0.0"
 
-iron-webcrypto@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/iron-webcrypto/-/iron-webcrypto-0.5.0.tgz#6028474b6de42bb3b5ea8d2222f5af791696ccf9"
-  integrity sha512-9m0tDUIo+GPwDYi1CNlAW3ToIFTS9y88lf41KsEwbBsL4PKNjhrNDGoA0WlB6WWaJ6pgp+FOP1+6ls0YftivyA==
+iron-webcrypto@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/iron-webcrypto/-/iron-webcrypto-0.6.0.tgz#3e597930b41363fc81a6ec415d25eb5000092144"
+  integrity sha512-WYgEQttulX/+JTv1BTJFYY3OsAb+ZnCuA53IjppZMyiRsVdGeEuZ/k4fJrg77Rzn0pp9/PgWtXUF+5HndDA5SQ==
 
 is-arrayish@^0.2.1:
   version "0.2.1"
