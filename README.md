@@ -15,6 +15,7 @@ A **proxy event handler** for `h3`, using `proxyRequest`.
 # Features
 
 - Powered by built-in `proxyRequest` of `h3`.
+- Support http(s) proxy via some simple [configurations](https://github.com/yisibell/h3-proxy#options).
 - Support logs via **consola**.
 - Support **Typescript**.
 
@@ -164,3 +165,7 @@ createProxyEventHandler({
 # CHANGE LOG
 
 SEE <a href="./CHANGELOG.md">CHANGE LOG</a>.
+
+# Framework Supports
+
+- Nuxt: see [nuxt-proxy-request](https://github.com/yisibell/nuxt-proxy-request).
