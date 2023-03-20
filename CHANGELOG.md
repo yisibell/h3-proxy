@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v1.7.1
+
+
+### 🩹 Fixes
+
+  - Eslint config; fix target path gets (106d2ff)
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.7.0
 
 
