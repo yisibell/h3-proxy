@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v1.7.0
+
+
+### 🚀 Enhancements
+
+  - Support changeOrigin option (a9f2429)
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.6.1
 
 
