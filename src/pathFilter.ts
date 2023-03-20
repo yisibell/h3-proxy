@@ -76,7 +76,7 @@ const isTargetFilterPath: IsTargetFilterPath = (
       return matchMultiGlobPath(pathname, pathFilter)
     }
 
-    throw new Error(ERRORS.ERR_CONTEXT_MATCHER_INVALID_ARRAY);
+    throw new Error(ERRORS.ERR_CONTEXT_MATCHER_INVALID_ARRAY)
   }
 
   return true

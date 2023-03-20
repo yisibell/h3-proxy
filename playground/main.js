@@ -13,7 +13,7 @@ const proxyEventHandler = createProxyEventHandler({
   },
   pathFilter: ['/api/**'],
   // enableLogger: false,
-  changeOrigin: true
+  changeOrigin: true,
 })
 
 app.use(
