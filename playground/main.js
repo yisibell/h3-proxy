@@ -1,6 +1,7 @@
 import { createServer } from 'node:http'
 import { createApp, eventHandler, toNodeListener } from 'h3'
 import { createProxyEventHandler } from '../lib/index.esm.js'
+import consola from 'consola'
 
 const app = createApp()
 
@@ -23,4 +24,6 @@ app.use(
 
 app.use(eventHandler(proxyEventHandler))
 
-createServer(toNodeListener(app)).listen(port)
+createServer(toNodeListener(app)).listen(port, () => {
+  consola.success(`Your app server start at: http://127.0.0.1:${port}`)
+})
