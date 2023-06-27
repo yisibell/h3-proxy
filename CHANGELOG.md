@@ -1,6 +1,21 @@
 # Changelog
 
 
+## v1.8.0
+
+
+### 🚀 Enhancements
+
+  - **deps:** Update deps h3 to 1.7.0 and update readme (4b18a3b)
+
+### 🏡 Chore
+
+  - **playground:** Update demo (61aec09)
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.7.2
 
 
