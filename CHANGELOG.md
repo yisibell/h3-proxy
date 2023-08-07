@@ -1,6 +1,17 @@
 # Changelog
 
 
+## v1.9.0
+
+
+### 🚀 Enhancements
+
+  - **deps:** Upgarde typescript to v5 and other non-major deps (6887c9d)
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.8.0
 
 
