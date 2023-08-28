@@ -68,7 +68,13 @@ createServer(toNodeListener(app)).listen(port)
 
 Create a `h3` event handler that can handle **proxy requests**.
 
-### Options
+```ts
+const proxyEventHandler = createProxyEventHandler({
+  // options
+})
+```
+
+# Options
 
 | Key | Type | Required | Default value | Description |
 | :---: | :---: | :---: | :---: | :---:  |
@@ -81,7 +87,7 @@ Create a `h3` event handler that can handle **proxy requests**.
 | `changeOrigin` | `boolean` | `false` | `false` | Whether to changes the origin of the host header to the target URL |
 
 
-### pathFilter
+## pathFilter
 
 - **path matching**
 
@@ -123,7 +129,7 @@ Create a `h3` event handler that can handle **proxy requests**.
   });
   ```
 
-### pathRewrite
+## pathRewrite
 
 Rewrite target's url path. **Object-keys** will be used as **RegExp** to match paths.
 
@@ -148,7 +154,7 @@ pathRewrite: async function (path, req) {
 }
 ```
 
-### configureProxyRequest
+## configureProxyRequest
 
 ```ts
 createProxyEventHandler({
@@ -164,7 +170,7 @@ createProxyEventHandler({
 
 # CHANGE LOG
 
-SEE <a href="./CHANGELOG.md">CHANGE LOG</a>.
+See <a href="./CHANGELOG.md">CHANGE LOG</a> here.
 
 # Framework Supports
 
