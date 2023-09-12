@@ -64,7 +64,7 @@
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
-    "changelogen": "^0.4.1",
+    "changelogen": "^0.5.5",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^8.10.0",
