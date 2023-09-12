@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v1.10.0
+
+[compare changes](https://github.com/yisibell/h3-proxy/compare/v1.9.1...v1.10.0)
+
+### 🚀 Enhancements
+
+- Support h3 v1.8 ([4c4beb5](https://github.com/yisibell/h3-proxy/commit/4c4beb5))
+- Update changelogen version ([3768304](https://github.com/yisibell/h3-proxy/commit/3768304))
+
+### ❤️ Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.9.1
 
 
