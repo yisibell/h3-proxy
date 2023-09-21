@@ -120,7 +120,13 @@ const proxyEventHandler = createProxyEventHandler({
    * @return {Boolean}
    */
   const pathFilter = function (path, req) {
-    return path.match('^/api') && req.method === 'GET';
+
+    return path.match(/^\/api/) && req.method === 'GET';
+
+    // TIPS: if you are using it in nuxt-proxy-request
+    // Pls use `new RegExp()` instead.
+
+    // return path.match(new RegExp('^\/api')) && req.method === 'GET';
   };
 
   const apiProxy = createProxyEventHandler({
