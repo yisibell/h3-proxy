@@ -162,6 +162,8 @@ pathRewrite: async function (path, req) {
 
 ## configureProxyRequest
 
+More details see [proxyRequest of h3](https://github.com/unjs/h3/blob/main/src/utils/proxy.ts).
+
 ```ts
 createProxyEventHandler({
   // ...
