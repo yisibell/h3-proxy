@@ -168,6 +168,12 @@ createProxyEventHandler({
   // the param `event` is H3Event
   configureProxyRequest(event) {
     // return your custom options of proxyRequest
+
+    // eg: specify some request headers
+    // return {
+    //   headers: {}
+    // }
+
     return {}
   }
 })
