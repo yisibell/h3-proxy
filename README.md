@@ -14,7 +14,7 @@ A **proxy event handler** for [h3](https://github.com/unjs/h3), using `proxyRequ
 
 # Features
 
-- Powered by built-in `proxyRequest` of [h3](https://github.com/unjs/h3).
+- Powered by built-in [proxyRequest](https://github.com/unjs/h3/blob/main/src/utils/proxy.ts) of [h3](https://github.com/unjs/h3).
 - Support http(s) proxy via some simple [configurations](https://github.com/yisibell/h3-proxy#options).
 - Support logs via **consola**.
 - Support **Typescript**.
