@@ -187,5 +187,19 @@ createProxyEventHandler({
 See <a href="./CHANGELOG.md">CHANGE LOG</a> here.
 
 # Framework Supports
+## Nuxt
 
-- Nuxt: see [nuxt-proxy-request](https://github.com/yisibell/nuxt-proxy-request).
+- using [nuxt-proxy-request](https://github.com/yisibell/nuxt-proxy-request) module.
+- using `h3-proxy` directly in **Nuxt**.
+
+Add a [server middleware](https://nuxt.com/docs/guide/directory-structure/server#server-middleware).
+
+```ts
+// ~/server/middleware/proxy.ts
+
+import { createProxyEventHandler } from 'h3-proxy'
+
+export default defineEventHandler(createProxyEventHandler({
+  // options...
+}))
+```
