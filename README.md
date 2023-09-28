@@ -12,6 +12,8 @@
 
 A **proxy event handler** for [h3](https://github.com/unjs/h3), using `proxyRequest`.
 
+- ✨ [Release Notes](./CHANGELOG.md)
+
 # Features
 
 - Powered by built-in [proxyRequest](https://github.com/unjs/h3/blob/main/src/utils/proxy.ts) of [h3](https://github.com/unjs/h3).
@@ -180,11 +182,6 @@ createProxyEventHandler({
   }
 })
 ```
-
-
-# CHANGE LOG
-
-See <a href="./CHANGELOG.md">CHANGE LOG</a> here.
 
 # Framework Supports
 ## Nuxt
