@@ -34,7 +34,7 @@ $ yarn add h3-proxy
 $ npm i h3-proxy
 ```
 
-# Usage
+# Basic usage
 
 ```ts
 import { createServer } from 'node:http'
@@ -45,6 +45,7 @@ const app = createApp()
 
 const port = process.env.PORT || 3000
 
+// Define proxy event handler
 const proxyEventHandler = createProxyEventHandler({
   target: `http://127.0.0.1:${port}`,
   pathRewrite: {
@@ -59,10 +60,64 @@ app.use(
   eventHandler(() => 'Hello world!')
 )
 
+// Add proxy middlewares
 app.use(eventHandler(proxyEventHandler))
 
 createServer(toNodeListener(app)).listen(port)
 ```
+
+# Multiple proxy targets usage
+
+Create multiple proxy **h3** event handler middleware.
+
+```ts
+import { createServer } from 'node:http'
+import { createApp, eventHandler, toNodeListener } from 'h3'
+import { createProxyEventHandler } from 'h3-proxy'
+
+const app = createApp()
+
+const port = process.env.PORT || 3000
+
+// proxy to `http://127.0.0.1:${port}`
+const proxyEventHandler1 = createProxyEventHandler({
+  target: `http://127.0.0.1:${port}`, // http://127.0.0.1:3000
+  pathRewrite: {
+    '^/api': '',
+  },
+  pathFilter: ['/api/**'],
+})
+
+// proxy to http://other-server.com
+const proxyEventHandler2 = createProxyEventHandler({
+  target: `http://other-server.com/api`,
+  pathRewrite: {
+    '^/other-api': '',
+  },
+  pathFilter: ['/other-api/**'],
+})
+
+app.use(
+  '/test',
+  eventHandler(() => 'Hello world!')
+)
+
+// Add proxy middlewares
+app.use(eventHandler(proxyEventHandler1))
+app.use(eventHandler(proxyEventHandler2))
+
+createServer(toNodeListener(app)).listen(port)
+```
+
+- For `proxyEventHandler1`, The result of proxy request  is as follows:
+
+`/api/test` -> `http://127.0.0.1:3000/test`
+
+
+- For `proxyEventHandler2`, The result of proxy request  is as follows:
+
+`/other-api/some/path` -> `http://other-server.com/some/path`
+
 
 # APIs
 
