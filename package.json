@@ -24,7 +24,8 @@
     "test:dev": "vitest dev",
     "test": "vitest run",
     "test:coverage": "yarn test -- --reporter verbose --coverage",
-    "start": "node ./playground/main.js"
+    "start": "node ./playground/main.js",
+    "start:multi-target-usage": "node ./playground/multi-target-usage.js"
   },
   "repository": {
     "type": "git",
