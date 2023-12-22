@@ -1,6 +1,32 @@
 # Changelog
 
 
+## v1.11.0
+
+[compare changes](https://github.com/yisibell/h3-proxy/compare/v1.10.0...v1.11.0)
+
+### 🚀 Enhancements
+
+- Support multiple proxy targets(https://github.com/yisibell/h3-proxy/issues/1) ([eb9b6ba](https://github.com/yisibell/h3-proxy/commit/eb9b6ba))
+
+### 🏡 Chore
+
+- **docs:** Update pathFilter readme ([fa95573](https://github.com/yisibell/h3-proxy/commit/fa95573))
+- **docs:** Update readme ([7912840](https://github.com/yisibell/h3-proxy/commit/7912840))
+- **docs:** Update readme ([432165b](https://github.com/yisibell/h3-proxy/commit/432165b))
+- Update readme ([fa687c7](https://github.com/yisibell/h3-proxy/commit/fa687c7))
+- **docs:** Update readme ([146bc58](https://github.com/yisibell/h3-proxy/commit/146bc58))
+- **docs:** Update readme ([b911f52](https://github.com/yisibell/h3-proxy/commit/b911f52))
+- Update readme ([31085ce](https://github.com/yisibell/h3-proxy/commit/31085ce))
+- Update readme ([4d91d1e](https://github.com/yisibell/h3-proxy/commit/4d91d1e))
+- Fix multiple targets usage demo ([9ea9048](https://github.com/yisibell/h3-proxy/commit/9ea9048))
+- Update readme ([04cd9a6](https://github.com/yisibell/h3-proxy/commit/04cd9a6))
+- Update readme ([d38ae12](https://github.com/yisibell/h3-proxy/commit/d38ae12))
+
+### ❤️ Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.10.0
 
 [compare changes](https://github.com/yisibell/h3-proxy/compare/v1.9.1...v1.10.0)
