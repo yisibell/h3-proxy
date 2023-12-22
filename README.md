@@ -69,7 +69,7 @@ createServer(toNodeListener(app)).listen(port)
 
 # Multiple proxy targets usage
 
-- Create multiple proxy **h3** event handler middleware.
+### Create multiple proxy **h3** event handler middleware.
 
 ```ts
 import { createServer } from 'node:http'
@@ -126,7 +126,7 @@ createServer(toNodeListener(app)).listen(port)
 `/other-api/some/path` -> `http://127.0.0.1:3000/other-api-module/some/path`
 
 
-- Or, using **Array** type options to define multiple proxy targets (added in v1.11.0).
+### Or, using **Array** type options to define multiple proxy targets (added in v1.11.0).
 
 ```ts
 const proxyEventHandler = createProxyEventHandler([
