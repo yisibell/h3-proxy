@@ -89,7 +89,7 @@ const proxyEventHandler1 = createProxyEventHandler({
   pathFilter: ['/api/**'],
 })
 
-// proxy to http://other-server.com
+// proxy to other target
 const proxyEventHandler2 = createProxyEventHandler({
   target: `http://127.0.0.1:${port}/other-api-module`,
   pathRewrite: {
