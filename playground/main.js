@@ -7,7 +7,7 @@ const app = createApp()
 
 const port = process.env.PORT || 3000
 
-const proxyEventHandler = createProxyEventHandler({
+const proxyEventHandler1 = createProxyEventHandler({
   target: `http://127.0.0.1:${port}`,
   pathRewrite: {
     '^/api': '',
@@ -17,12 +17,28 @@ const proxyEventHandler = createProxyEventHandler({
   changeOrigin: true,
 })
 
+const proxyEventHandler2 = createProxyEventHandler({
+  target: `http://127.0.0.1:${port}/other-api-module`,
+  pathRewrite: {
+    '^/other-api': '',
+  },
+  pathFilter: ['/other-api/**'],
+  // enableLogger: false,
+  changeOrigin: true,
+})
+
+app.use(eventHandler(proxyEventHandler1))
+app.use(eventHandler(proxyEventHandler2))
+
 app.use(
   '/test',
   eventHandler(() => 'Hello world!')
 )
 
-app.use(eventHandler(proxyEventHandler))
+app.use(
+  '/other-api-module/some/path',
+  eventHandler(() => 'Hello other API module!')
+)
 
 createServer(toNodeListener(app)).listen(port, () => {
   consola.success(`Your app server start at: http://127.0.0.1:${port}`)

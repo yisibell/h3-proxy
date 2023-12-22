@@ -55,13 +55,14 @@ const proxyEventHandler = createProxyEventHandler({
   // enableLogger: true
 })
 
+// Add proxy middlewares
+app.use(eventHandler(proxyEventHandler))
+
+// Define api routes
 app.use(
   '/test',
   eventHandler(() => 'Hello world!')
 )
-
-// Add proxy middlewares
-app.use(eventHandler(proxyEventHandler))
 
 createServer(toNodeListener(app)).listen(port)
 ```
@@ -90,21 +91,27 @@ const proxyEventHandler1 = createProxyEventHandler({
 
 // proxy to http://other-server.com
 const proxyEventHandler2 = createProxyEventHandler({
-  target: `http://other-server.com/api`,
+  target: `http://127.0.0.1:${port}/other-api-module`,
   pathRewrite: {
     '^/other-api': '',
   },
   pathFilter: ['/other-api/**'],
 })
 
+// Add proxy middlewares
+app.use(eventHandler(proxyEventHandler1))
+app.use(eventHandler(proxyEventHandler2))
+
+// Define api routes
 app.use(
   '/test',
   eventHandler(() => 'Hello world!')
 )
 
-// Add proxy middlewares
-app.use(eventHandler(proxyEventHandler1))
-app.use(eventHandler(proxyEventHandler2))
+app.use(
+  '/other-api-module/some/path',
+  eventHandler(() => 'Hello other API module!')
+)
 
 createServer(toNodeListener(app)).listen(port)
 ```
@@ -116,7 +123,7 @@ createServer(toNodeListener(app)).listen(port)
 
 - For `proxyEventHandler2`, The result of proxy request  is as follows:
 
-`/other-api/some/path` -> `http://other-server.com/api/some/path`
+`/other-api/some/path` -> `http://127.0.0.1:3000/other-api-module/some/path`
 
 
 # APIs
