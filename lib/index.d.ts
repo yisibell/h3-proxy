@@ -37,7 +37,7 @@ interface CreateProxyEventHandlerOptions {
 }
 
 type CreateProxyEventHandler = (
-  options: CreateProxyEventHandlerOptions
+  options: CreateProxyEventHandlerOptions | CreateProxyEventHandlerOptions[]
 ) => EventHandler
 
 declare const createProxyEventHandler: CreateProxyEventHandler

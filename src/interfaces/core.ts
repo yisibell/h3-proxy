@@ -22,5 +22,5 @@ export interface CreateProxyEventHandlerOptions {
 }
 
 export type CreateProxyEventHandler = (
-  options: CreateProxyEventHandlerOptions
+  options: CreateProxyEventHandlerOptions | CreateProxyEventHandlerOptions[]
 ) => EventHandler
