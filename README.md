@@ -116,7 +116,7 @@ createServer(toNodeListener(app)).listen(port)
 
 - For `proxyEventHandler2`, The result of proxy request  is as follows:
 
-`/other-api/some/path` -> `http://other-server.com/some/path`
+`/other-api/some/path` -> `http://other-server.com/api/some/path`
 
 
 # APIs
