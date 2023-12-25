@@ -1,8 +1,8 @@
-import type { IncomingMessage } from 'http'
+import type { NodeIncomingMessage } from 'h3'
 
 export type CustomPathFilter = (
   pathname: string,
-  req: IncomingMessage
+  req: NodeIncomingMessage
 ) => boolean
 
 export type PathFilterParams = string | string[] | CustomPathFilter
@@ -11,6 +11,6 @@ export type IsTargetFilterPath = (
   pathname: string | undefined,
   opts: {
     pathFilter?: PathFilterParams
-    req: IncomingMessage
+    req: NodeIncomingMessage
   }
 ) => boolean

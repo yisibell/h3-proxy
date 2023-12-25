@@ -1,9 +1,9 @@
-import type { IncomingMessage } from 'http'
+import type { NodeIncomingMessage } from 'h3'
 import type { Logger } from './logger'
 
 export type CustomPathRewriter = (
   pathname: string,
-  req: IncomingMessage
+  req: NodeIncomingMessage
 ) => string | Promise<string>
 
 export type RewriteRecord = Record<string, string>
