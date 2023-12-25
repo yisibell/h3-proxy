@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v1.11.1
+
+[compare changes](https://github.com/yisibell/h3-proxy/compare/v1.11.0...v1.11.1)
+
+### 🏡 Chore
+
+- Update readme ([9a0c12c](https://github.com/yisibell/h3-proxy/commit/9a0c12c))
+- Upgrade final options gets ([81a5215](https://github.com/yisibell/h3-proxy/commit/81a5215))
+
+### ❤️ Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.11.0
 
 [compare changes](https://github.com/yisibell/h3-proxy/compare/v1.10.0...v1.11.0)
