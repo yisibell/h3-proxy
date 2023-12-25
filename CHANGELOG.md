@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.11.2
+
+[compare changes](https://github.com/yisibell/h3-proxy/compare/v1.11.1...v1.11.2)
+
+### 🩹 Fixes
+
+- Update http request incomingMessage types ([9599059](https://github.com/yisibell/h3-proxy/commit/9599059))
+
+### ❤️ Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.11.1
 
 [compare changes](https://github.com/yisibell/h3-proxy/compare/v1.11.0...v1.11.1)
