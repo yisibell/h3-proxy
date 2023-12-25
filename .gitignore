@@ -105,3 +105,6 @@ dist
 
 # Mac OS Desktop Services Store
 .DS_Store
+
+# build output
+lib
