@@ -5,6 +5,7 @@ import type {
 } from './interfaces/core'
 import { createPathRewriter } from './pathRewriter'
 import { proxyRequest } from 'h3'
+import type { NodeIncomingMessage } from 'h3'
 import { ERRORS } from './errors'
 import { createLogger } from './logger'
 import { createProxyRequestOptions } from './proxyRequestStrategy'
@@ -14,6 +15,23 @@ const defaultOption = (): CreateProxyEventHandlerOptions => ({
   target: '',
   enableLogger: true,
 })
+
+const getTargetOptions = (
+  req: NodeIncomingMessage,
+  finalMultiOptions: CreateProxyEventHandlerOptions[]
+) => {
+  let path = ''
+
+  const finalOptions = finalMultiOptions.find((v) => {
+    path = getUrlPath(req.url, v.target)
+    return isTargetFilterPath(path, { pathFilter: v.pathFilter, req })
+  })
+
+  return {
+    path,
+    finalOptions,
+  }
+}
 
 const createProxyEventHandler: CreateProxyEventHandler = (options) => {
   const multiOptions = Array.isArray(options) ? options : [options]
@@ -25,10 +43,7 @@ const createProxyEventHandler: CreateProxyEventHandler = (options) => {
   return async (event) => {
     const { req } = event.node
 
-    const finalOptions = finalMultiOptions.find((v) => {
-      const path = getUrlPath(req.url, v.target)
-      return isTargetFilterPath(path, { pathFilter: v.pathFilter, req })
-    })
+    const { finalOptions, path } = getTargetOptions(req, finalMultiOptions)
 
     if (finalOptions) {
       const { target, pathRewrite, enableLogger, loggerOptions } = finalOptions
@@ -41,8 +56,6 @@ const createProxyEventHandler: CreateProxyEventHandler = (options) => {
         enableLogger,
         loggerOptions,
       })
-
-      const path = getUrlPath(req.url, target)
 
       const pathRewriter = createPathRewriter(pathRewrite, logger)
 
