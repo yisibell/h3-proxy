@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v1.12.0
+
+[compare changes](https://github.com/yisibell/h3-proxy/compare/v1.11.2...v1.12.0)
+
+### 🚀 Enhancements
+
+- Upgrade `consola` to v3 and other dev deps version to latest ([dbb8a2c](https://github.com/yisibell/h3-proxy/commit/dbb8a2c))
+
+### 🏡 Chore
+
+- Ignore lib dir ([7abc512](https://github.com/yisibell/h3-proxy/commit/7abc512))
+
+### ❤️ Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.11.2
 
 [compare changes](https://github.com/yisibell/h3-proxy/compare/v1.11.1...v1.11.2)
