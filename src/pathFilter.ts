@@ -12,14 +12,14 @@ const isGlobPath = (pattern?: string | string[]): pattern is string => {
 }
 
 const isMultiPath = (
-  pathFilter?: string | string[]
+  pathFilter?: string | string[],
 ): pathFilter is string[] => {
   return Array.isArray(pathFilter)
 }
 
 const matchSingleStringPath = (
   pathname: string,
-  pathFilter?: string
+  pathFilter?: string,
 ): boolean => {
   if (!pathFilter) return false
   return pathname.indexOf(pathFilter) >= 0
@@ -27,13 +27,13 @@ const matchSingleStringPath = (
 
 const matchMultiPath = (pathname: string, pathFilterList: string[]) => {
   return pathFilterList.some((pattern) =>
-    matchSingleStringPath(pathname, pattern)
+    matchSingleStringPath(pathname, pattern),
   )
 }
 
 const matchSingleGlobPath = (
   pathname: string,
-  pattern?: string | string[]
+  pattern?: string | string[],
 ): boolean => {
   if (!pattern) return false
   const matches = micromatch([pathname], pattern)
@@ -49,7 +49,7 @@ const matchMultiGlobPath = (pathname: string, patterns?: string | string[]) => {
  */
 const isTargetFilterPath: IsTargetFilterPath = (
   pathname = '',
-  { pathFilter, req }
+  { pathFilter, req },
 ) => {
   // custom path filter
   if (typeof pathFilter === 'function') {

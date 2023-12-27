@@ -17,7 +17,7 @@ const generateOutgoingHost = (target: string) => {
 
 const createProxyRequestOptions = (
   event: H3Event,
-  options: CreateProxyEventHandlerOptions
+  options: CreateProxyEventHandlerOptions,
 ): ProxyRequestOptions | undefined => {
   const { configureProxyRequest, changeOrigin, target } = options
 
@@ -36,12 +36,12 @@ const createProxyRequestOptions = (
 
   const finalOptions: ProxyRequestOptions = Object.assign(
     defaultOptions,
-    incomingOptions
+    incomingOptions,
   )
 
   finalOptions.headers = Object.assign(
     defaultOptions.headers,
-    incomingOptions.headers
+    incomingOptions.headers,
   )
 
   return finalOptions

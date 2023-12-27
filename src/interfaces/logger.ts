@@ -1,4 +1,4 @@
-import type { ConsolaOptions, Consola } from 'consola'
+import type { ConsolaOptions, ConsolaInstance } from 'consola'
 
 export interface CreateLoggerOptions {
   // Whether to enable logger
@@ -7,6 +7,6 @@ export interface CreateLoggerOptions {
   loggerOptions?: ConsolaOptions
 }
 
-export type Logger = Consola
+export type Logger = ConsolaInstance
 
 export type CreateLogger = (options: CreateLoggerOptions) => Logger | undefined

@@ -18,7 +18,7 @@ const defaultOption = (): CreateProxyEventHandlerOptions => ({
 
 const getTargetOptions = (
   req: NodeIncomingMessage,
-  finalMultiOptions: CreateProxyEventHandlerOptions[]
+  finalMultiOptions: CreateProxyEventHandlerOptions[],
 ) => {
   let path = ''
 
@@ -37,7 +37,7 @@ const createProxyEventHandler: CreateProxyEventHandler = (options) => {
   const multiOptions = Array.isArray(options) ? options : [options]
 
   const finalMultiOptions = multiOptions.map((v) =>
-    Object.assign(defaultOption(), v)
+    Object.assign(defaultOption(), v),
   )
 
   return async (event) => {
