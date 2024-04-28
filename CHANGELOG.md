@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v1.13.0
+
+[compare changes](https://github.com/yisibell/h3-proxy/compare/v1.12.0...v1.13.0)
+
+### 🚀 Enhancements
+
+- Upgrade h3 to v1.11 ([6face8a](https://github.com/yisibell/h3-proxy/commit/6face8a))
+- Supports customize proxyRequest method of h3 ([696a149](https://github.com/yisibell/h3-proxy/commit/696a149))
+
+### 🏡 Chore
+
+- Update code styles ([8fe3f3f](https://github.com/yisibell/h3-proxy/commit/8fe3f3f))
+
+### ❤️ Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v1.12.0
 
 [compare changes](https://github.com/yisibell/h3-proxy/compare/v1.11.2...v1.12.0)
