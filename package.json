@@ -38,7 +38,10 @@
     "http",
     "proxy",
     "proxyRequest",
-    "middleware"
+    "middleware",
+    "nuxt",
+    "nuxt3",
+    "nuxt-proxy"
   ],
   "author": {
     "name": "elenh",
