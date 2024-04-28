@@ -23,7 +23,7 @@
     "release": "npm run build && changelogen --release && npm publish --access=public && git push --follow-tags",
     "test:dev": "vitest dev",
     "test": "vitest run",
-    "test:coverage": "yarn test -- --reporter verbose --coverage",
+    "test:coverage": "pnpm test -- --reporter verbose --coverage",
     "start": "node ./playground/main.js",
     "start:multi-target-usage": "node ./playground/multi-target-usage.js"
   },
@@ -70,7 +70,7 @@
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.2",
-    "h3": "^1.9.0",
+    "h3": "^1.11.1",
     "lodash": "^4.17.21",
     "prettier": "^3.1.1",
     "rollup": "^4.9.1",
