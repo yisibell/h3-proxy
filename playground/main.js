@@ -32,12 +32,12 @@ app.use(eventHandler(proxyEventHandler2))
 
 app.use(
   '/test',
-  eventHandler(() => 'Hello world!')
+  eventHandler(() => 'Hello world!'),
 )
 
 app.use(
   '/other-api-module/some/path',
-  eventHandler(() => 'Hello other API module!')
+  eventHandler(() => 'Hello other API module!'),
 )
 
 createServer(toNodeListener(app)).listen(port, () => {

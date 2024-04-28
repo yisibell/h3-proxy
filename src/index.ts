@@ -46,7 +46,13 @@ const createProxyEventHandler: CreateProxyEventHandler = (options) => {
     const { finalOptions, path } = getTargetOptions(req, finalMultiOptions)
 
     if (finalOptions) {
-      const { target, pathRewrite, enableLogger, loggerOptions } = finalOptions
+      const {
+        target,
+        pathRewrite,
+        enableLogger,
+        loggerOptions,
+        proxyRequestMethod,
+      } = finalOptions
 
       if (!target) {
         throw new Error(ERRORS.ERR_CONFIG_FACTORY_TARGET_MISSING)
@@ -67,10 +73,15 @@ const createProxyEventHandler: CreateProxyEventHandler = (options) => {
 
       const targetUrl = `${target}${rewritedPath}`
 
-      logger && logger.success('proxy to target url:', targetUrl)
+      logger?.success('proxy to target url:', targetUrl)
 
       // generate proxy request options via default strategy
       const proxyRequestOptions = createProxyRequestOptions(event, finalOptions)
+
+      // customize proxy request method
+      if (proxyRequestMethod) {
+        return proxyRequestMethod(event, targetUrl, proxyRequestOptions)
+      }
 
       return proxyRequest(event, targetUrl, proxyRequestOptions)
     }
