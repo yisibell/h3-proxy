@@ -159,7 +159,7 @@ const proxyEventHandler = createProxyEventHandler({
 | [pathFilter](https://github.com/yisibell/h3-proxy#pathFilter) | `string, string[], glob, glob[], Function` | `false` | `undefined` |Narrow down which requests should be proxied. |
 | [pathRewrite](https://github.com/yisibell/h3-proxy#pathRewrite) | `object/Function` | `false` | `undefined` | Rewrite target's url path. Object-keys will be used as RegExp to match paths. |
 | [configureProxyRequest](https://github.com/yisibell/h3-proxy#configureProxyRequest) | `Function` | `false` | `undefined` | Configure options of `proxyRequest`. More details see [built-in util proxyRequest of h3](https://github.com/unjs/h3) |
-| `proxyRequestMethod` <br /> Added in **v1.13.0** | `Function` | `false` | `undefined` | Customize `proxyRequest` of **h3** method. |
+| `proxyRequestMethod` <br /> (Added in **v1.13.0**) | `Function` | `false` | `undefined` | Customize `proxyRequest` of **h3** method. |
 | `enableLogger` | `boolean` | `false` | `true` | Whether to enable logger which is created by **consola**. |
 | `loggerOptions` | `ConsolaOptions` | `false` | `{}` | Configure the options of [consola](https://github.com/unjs/consola). |
 | `changeOrigin` | `boolean` | `false` | `false` | Whether to changes the origin of the host header to the target URL |
