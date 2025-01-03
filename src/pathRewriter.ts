@@ -29,7 +29,7 @@ function parsePathRewriteRules(rewriteRecord: RewriteRecord, logger?: Logger) {
         regex: new RegExp(key),
         value: value,
       })
-      logger && logger.info('rewrite rule created: "%s" ~> "%s"', key, value)
+      logger?.info('rewrite rule created: "%s" ~> "%s"', key, value)
     }
   }
 
@@ -52,7 +52,7 @@ const createPathRewriter: CreatePathRewriter = (rewriteConfig, logger) => {
     for (const rule of rulesCache) {
       if (rule.regex.test(path)) {
         result = result.replace(rule.regex, rule.value)
-        logger && logger.info('rewriting path from "%s" to "%s"', path, result)
+        logger?.info('rewriting path from "%s" to "%s"', path, result)
         break
       }
     }

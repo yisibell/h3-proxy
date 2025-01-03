@@ -15,4 +15,7 @@ export type CreatePathRewriter = (
   logger?: Logger,
 ) => CustomPathRewriter | undefined
 
-export type RewriteRule = { regex: RegExp; value: string }
+export interface RewriteRule {
+  regex: RegExp
+  value: string
+}
