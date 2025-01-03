@@ -25,7 +25,8 @@
     "test": "vitest run",
     "test:coverage": "pnpm test -- --reporter verbose --coverage",
     "start": "node ./playground/main.js",
-    "start:multi-target-usage": "node ./playground/multi-target-usage.js"
+    "start:multi-target-usage": "node ./playground/multi-target-usage.js",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -58,6 +59,7 @@
     "micromatch": "^4.0.5"
   },
   "devDependencies": {
+    "@eslint/js": "^9.17.0",
     "@rollup/plugin-alias": "^5.1.0",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
@@ -66,13 +68,11 @@
     "@types/lodash": "^4.14.202",
     "@types/micromatch": "^4.0.6",
     "@types/supertest": "^6.0.1",
-    "@typescript-eslint/eslint-plugin": "^6.16.0",
-    "@typescript-eslint/parser": "^6.16.0",
     "changelogen": "^0.5.5",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.56.0",
+    "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.2",
+    "eslint-plugin-prettier": "^5.2.1",
     "h3": "^1.11.1",
     "lodash": "^4.17.21",
     "prettier": "^3.1.1",
@@ -81,6 +81,7 @@
     "supertest": "^6.3.3",
     "tslib": "^2.6.2",
     "typescript": "~5.3.3",
+    "typescript-eslint": "^8.19.0",
     "vitest": "^1.1.0"
   },
   "peerDependencies": {
